@@ -17,7 +17,7 @@ const Books = () => {
       <ul className={styles.list}>
         {books.map((book) => (
           <li className={styles.item} key={book.item_id}>
-            <Book title={book.title} author={book.author} />
+            <Book title={book.title} author={book.author} id={book.item_id} />
           </li>
         ))}
       </ul>
