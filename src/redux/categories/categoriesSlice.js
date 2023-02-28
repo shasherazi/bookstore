@@ -9,7 +9,11 @@ const categoriesSlice = createSlice({
   initialState,
   reducers: {
     checkStatus: () => 'Under construction',
+    filterCategory: (state, action) => {
+      state.categories.filter((category) => category === action.payload);
+    },
   },
+
 });
 
 export const { checkStatus } = categoriesSlice.actions;
