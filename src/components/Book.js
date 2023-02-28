@@ -15,7 +15,6 @@ const Book = ({ title, author, id }) => {
         title="Remove"
         onClick={
         () => {
-          console.log('remove');
           dispatch(removeBook({ id }));
         }
     }
