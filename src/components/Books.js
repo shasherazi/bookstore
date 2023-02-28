@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
-import { addBook } from '../redux/books/booksSlice';
+import { useState, useEffect } from 'react';
+import { addBook, fetchBooks, postBook } from '../redux/books/booksSlice';
 import Book from './Book';
 import styles from '../styles/Books.module.css';
 import Button from './Button';
@@ -12,12 +12,20 @@ const Books = () => {
   const [title, setTitle] = useState('');
   const [author, setAuthor] = useState('');
 
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   return (
     <div className={styles.books}>
       <ul className={styles.list}>
-        {books.map((book) => (
+        {books && books.map((book) => (
           <li className={styles.item} key={book.item_id}>
-            <Book title={book.title} author={book.author} id={book.item_id} />
+            <Book
+              title={book.title}
+              author={book.author}
+              id={book.item_id}
+            />
           </li>
         ))}
       </ul>
@@ -41,6 +49,7 @@ const Books = () => {
           title="Add Book"
           onClick={() => {
             dispatch(addBook({ title, author }));
+            dispatch(postBook({ title, author }));
             setAuthor('');
             setTitle('');
           }}

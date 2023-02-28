@@ -1,27 +1,47 @@
-import { createSlice } from '@reduxjs/toolkit';
+import uniqid from 'uniqid';
+
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+
+const url = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const id = 'nwjhISg2xHwIiqj8Ugat';
 
 const initialState = {
-  books: [
-    {
-      item_id: 'item1',
-      title: 'The Great Gatsby',
-      author: 'John Smith',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item2',
-      title: 'Anna Karenina',
-      author: 'Leo Tolstoy',
-      category: 'Fiction',
-    },
-    {
-      item_id: 'item3',
-      title: 'The Selfish Gene',
-      author: 'Richard Dawkins',
-      category: 'Nonfiction',
-    },
-  ],
+  books: [],
 };
+
+export const fetchBooks = createAsyncThunk('book/fetchBooks', async () => {
+  const response = await fetch(`${url}/apps/${id}/books`);
+  const data = await response.json();
+  return data;
+});
+
+export const postBook = createAsyncThunk('book/addBook', async (book) => {
+  const response = await fetch(`${url}/apps/${id}/books`, {
+    method: 'POST',
+    body: JSON.stringify({
+      item_id: uniqid(),
+      title: book.title,
+      author: book.author,
+      category: 'Fiction',
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = await response.json();
+  return data;
+});
+
+export const deleteBook = createAsyncThunk('book/removeBook', async (bookId) => {
+  const response = await fetch(`${url}/apps/${id}/books/${bookId}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  });
+  const data = await response.json();
+  return data;
+});
 
 const booksSlice = createSlice({
   name: 'books',
@@ -41,6 +61,17 @@ const booksSlice = createSlice({
       books: state.books.filter((book) => book.item_id !== action.payload.id),
     }),
   },
+  extraReducers: (builder) => {
+    builder.addCase(fetchBooks.fulfilled, (state, action) => {
+      const newBooks = Object.entries(action.payload).map((book) => ({
+        item_id: book[0],
+        ...book[1][0],
+      }));
+
+      return { ...state, books: newBooks };
+    });
+  },
+
 });
 
 export const { addBook, removeBook } = booksSlice.actions;
