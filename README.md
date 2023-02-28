@@ -17,6 +17,7 @@
   - [Run tests](#run-tests)
   - [Deployment](#triangular_flag_on_post-deployment)
 - [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
 - [🤝 Contributing](#contributing)
 - [⭐️ Show your support](#support)
 - [🙏 Acknowledgements](#acknowledgements)
@@ -110,6 +111,16 @@ npm start
 - GitHub: [@shasherazi](https://github.com/shasherazi)
 - Twitter: [@shasherazi](https://twitter.com/shasherazi)
 - LinkedIn: [@shasherazi](https://linkedin.com/in/shasherazi)
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- FUTURE FEATURES -->
+
+## 🔭 Future Features <a name="future-features"></a>
+
+- Add a progress bar to show the percentage of book completion.
+- Add a filter to show only completed books.
+- Add a filter to show only uncompleted books.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
