@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState, useEffect } from 'react';
-import { addBook, fetchBooks } from '../redux/books/booksSlice';
+import { addBook, fetchBooks, postBook } from '../redux/books/booksSlice';
 import Book from './Book';
 import styles from '../styles/Books.module.css';
 import Button from './Button';
@@ -19,7 +19,7 @@ const Books = () => {
   return (
     <div className={styles.books}>
       <ul className={styles.list}>
-        {books && Object.values(books).map((book) => (
+        {books && books.map((book) => (
           <li className={styles.item} key={book.item_id}>
             <Book
               title={book.title}
@@ -49,6 +49,7 @@ const Books = () => {
           title="Add Book"
           onClick={() => {
             dispatch(addBook({ title, author }));
+            dispatch(postBook({ title, author }));
             setAuthor('');
             setTitle('');
           }}
