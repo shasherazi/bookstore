@@ -1,5 +1,45 @@
+.books {
+  margin: 1rem 2rem;
+}
+
 .list {
   list-style-type: none;
   padding: 0;
-  margin: 0 2rem;
+}
+
+.hr {
+  border: 1px solid #e8e8e8;
+  margin: 2rem 0;
+}
+
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  opacity: 0.5;
+  margin: 0 0 1rem 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.inputsAndButton {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  border: 1px solid #bbb;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  padding: 0.5rem;
+  height: 2.5rem;
+  margin: 0 1rem 0 0;
+  width: 100%;
 }

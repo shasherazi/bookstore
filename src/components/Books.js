@@ -29,32 +29,37 @@ const Books = () => {
             />
           </li>
         ))}
+        <hr className={styles.hr} />
       </ul>
       <form className={styles.form}>
-        <input
-          type="text"
-          placeholder="Book title"
-          className={styles.input}
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <input
-          type="text"
-          placeholder="Author"
-          className={styles.input}
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-        />
-        <Button
-          type="button"
-          title="Add Book"
-          onClick={() => {
-            dispatch(addBook({ title, author }));
-            dispatch(postBook({ title, author }));
-            setAuthor('');
-            setTitle('');
-          }}
-        />
+        <h2 className={styles.title}>ADD NEW BOOK</h2>
+        <div className={styles.inputsAndButton}>
+          <input
+            type="text"
+            placeholder="Book title"
+            className={styles.input}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+          />
+          <input
+            type="text"
+            placeholder="Author"
+            className={styles.input}
+            value={author}
+            onChange={(e) => setAuthor(e.target.value)}
+          />
+          <Button
+            type="button"
+            title="Add Book"
+            className="book-add"
+            onClick={() => {
+              dispatch(addBook({ title, author }));
+              dispatch(postBook({ title, author }));
+              setAuthor('');
+              setTitle('');
+            }}
+          />
+        </div>
       </form>
     </div>
   );
