@@ -1,0 +1,10 @@
+.book-action {
+  background: none;
+  border: none;
+  color: #4386bf;
+  font-family: 'Roboto Slab', serif;
+  font-size: 14px;
+  margin: 20px 0 0 0;
+  cursor: pointer;
+  padding: 0;
+}
