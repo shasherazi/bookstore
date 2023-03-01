@@ -14,6 +14,10 @@
 
 .navTitle {
   color: #0290ff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 20px 0;
 }
 
 .navLink {

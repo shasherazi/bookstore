@@ -6,7 +6,7 @@ const Nav = () => (
   <>
     <div className={styles.nav}>
       <div className={styles.titleAndLinks}>
-        <h1 className={styles.navTitle}>Bookstore CMS</h1>
+        <NavLink to="/" className={styles.navTitle}>Bookstore CMS</NavLink>
         <ul className={styles.navList}>
           <li className={styles.navItem}>
             <NavLink to="/" className={styles.navLink}>
