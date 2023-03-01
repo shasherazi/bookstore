@@ -1,8 +1,64 @@
 .book {
   display: flex;
-  flex-direction: column;
+  border: 1px solid #e8e8ee;
+  justify-content: space-between;
+  padding: 2.5rem;
+  margin: 2rem 0;
 }
 
 button {
   width: fit-content;
+}
+
+.title {
+  font-family: 'Roboto Slab', serif;
+  margin: 0;
+}
+
+.author {
+  font-family: 'Roboto Slab', serif;
+  color: #4386bf;
+  margin: 0;
+}
+
+.category {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #121212;
+  opacity: 0.5;
+  margin: 0;
+}
+
+.button {
+  border: none;
+}
+
+.buttonsDiv {
+  color: #4386bf;
+  cursor: default;
+}
+
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.progressCircle {
+  width: 111px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.currentChapter,
+.chapter {
+  font-family: 'Roboto Slab', serif;
+  margin: 10px 0;
+}
+
+.currentChapter {
+  opacity: 0.5;
+}
+
+.separator {
+  margin: 0 1rem;
 }

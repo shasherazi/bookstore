@@ -2,12 +2,41 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2rem;
-  background-color: #eee;
+  padding: 0 5rem;
+  box-shadow: -1px 2px 0 -1px #e8e8e8;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.titleAndLinks {
+  display: flex;
+  align-items: center;
+}
+
+.navTitle {
+  color: #0290ff;
+  font-size: 2rem;
+  font-weight: 700;
+  text-decoration: none;
+  margin: 20px 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #121212;
+  opacity: 0.5;
 }
 
 .navList {
   display: flex;
   list-style: none;
   gap: 1rem;
+}
+
+.navIcon {
+  color: #0290ff;
+  font-size: 1.5rem;
+  border: 1px solid #e8e8e8;
+  border-radius: 50%;
+  padding: 0.5rem;
+  cursor: pointer;
 }
