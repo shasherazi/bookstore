@@ -48,6 +48,15 @@ const Book = ({
         <div className={styles.progressCircle}>
           <CircularProgressbar value={progress} text={`${progress}%`} />
         </div>
+        <div className={styles.progressInfo}>
+          <p className={styles.currentChapter}>CURRENT CHAPTER</p>
+          <p className={styles.chapter}>Chapter 17</p>
+          <Button
+            className="update-progress"
+            type="button"
+            title="UPDATE PROGRESS"
+          />
+        </div>
       </div>
     </div>
   );

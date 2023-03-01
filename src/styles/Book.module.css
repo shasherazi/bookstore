@@ -38,9 +38,25 @@ button {
   cursor: default;
 }
 
+.progress {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
 .progressCircle {
   width: 111px;
   font-family: 'Montserrat', sans-serif;
+}
+
+.currentChapter,
+.chapter {
+  font-family: 'Roboto Slab', serif;
+  margin: 10px 0;
+}
+
+.currentChapter {
+  opacity: 0.5;
 }
 
 .separator {
